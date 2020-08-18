@@ -1,0 +1,28 @@
+<h2 id="requirements">Personagens</h2>
+<div class="row">
+  <div class="col-sm-6">
+    <p class="lead">Personagens e suas características</p>
+    <ul class="lead">
+
+      <li *ngFor="let personagem of personagens">
+        <b>{{ personagem.name | titlecase}}</b>
+
+        <ul>
+          <li>Altura: {{ personagem.height }}</li>
+          <li *ngIf="personagem.gender == 'male'" >Gênero: Masculino</li>
+          <li *ngIf="personagem.gender != 'male'" >Gênero: Femenino</li>
+          <li>Preço do Boneco: {{ personagem.price | currency:'BRL'}}</li>
+          <li>Nota: {{ personagem.rating | number:'1.1-2' }}</li>
+          <li>Registrado em: {{ personagem.created | date:'d/M/yyyy' }}</li>
+         <!-- <li>{{ personagem | jsonn }}</li> -->
+        </ul>  
+      </li>            
+
+    </ul>
+  </div>
+  <div class="col-sm-6">
+    <blockquote class="lead">
+      Aqui estão os personagens mais legais da galáxia!
+    </blockquote>
+  </div>
+</div>
